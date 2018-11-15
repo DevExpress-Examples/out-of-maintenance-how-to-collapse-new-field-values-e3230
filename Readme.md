@@ -1,3 +1,9 @@
+<!-- default file list -->
+*Files to look at*:
+
+* [MainWindow.xaml](./CS/WpfApplication52/MainWindow.xaml) (VB: [MainWindow.xaml](./VB/WpfApplication52/MainWindow.xaml))
+* [MainWindow.xaml.cs](./CS/WpfApplication52/MainWindow.xaml.cs) (VB: [MainWindow.xaml](./VB/WpfApplication52/MainWindow.xaml))
+<!-- default file list end -->
 # How to collapse new Field Values
 
 
