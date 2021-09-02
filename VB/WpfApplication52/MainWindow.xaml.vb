@@ -1,5 +1,4 @@
-﻿Imports Microsoft.VisualBasic
-Imports System
+﻿Imports System
 Imports System.Collections.Generic
 Imports System.Linq
 Imports System.Text
@@ -21,6 +20,7 @@ Namespace WpfApplication52
 	''' </summary>
 	Partial Public Class MainWindow
 		Inherits Window
+
 		Public Sub New()
 			InitializeComponent()
 		End Sub
@@ -66,9 +66,9 @@ Namespace WpfApplication52
 
 		End Function
 
-		Private visibleValues As New Dictionary(Of PivotGridField, List(Of Object))()
+		Private visibleValues As Dictionary(Of PivotGridField, List(Of Object)) = New Dictionary(Of PivotGridField,List(Of Object))()
 		Private Sub pivotGridControl1_FieldFilterChanging(ByVal sender As Object, ByVal e As PivotFieldFilterChangingEventArgs)
-			Dim pivot As PivotGridControl =CType(sender, PivotGridControl)
+			Dim pivot As PivotGridControl =DirectCast(sender, PivotGridControl)
 			For Each field As PivotGridField In pivot.Fields
 				If field.Visible = False OrElse field.Area = FieldArea.DataArea OrElse field.Area = FieldArea.FilterArea Then
 					Continue For
@@ -92,7 +92,7 @@ Namespace WpfApplication52
 
 		Private Sub CollapseAllNewValues(ByVal oldValues As List(Of Object), ByVal newValues As List(Of Object), ByVal field As PivotGridField)
 			For Each val As Object In newValues
-				If (Not oldValues.Contains(val)) Then
+				If Not oldValues.Contains(val) Then
 					field.CollapseValue(val)
 				End If
 			Next val
